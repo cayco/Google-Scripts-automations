@@ -1,15 +1,10 @@
-function onOpen() {
-  getFiles(folderId);
-}
-
-
 /** 
  * Creates new report file from the old report with next Friday's date in the name field.
  * Krzysztof Kajkowski
  * 08.10.2017
 */
 
-// Folder with repert files
+// Folder with report files
 var folderId = 'XXXXYYYYZZZ';
 // Report day of the week. 5 is Friday
 var reportDay = 5;
@@ -57,11 +52,6 @@ function getNewestFileInFolder(folderName) {
 
     while (files.hasNext()) {
       file = files.next();
- /*     Logger.log('xxxx: file data: ' + file.getLastUpdated());
-      Logger.log('xxxx: file name: ' + file.getName());
-      Logger.log('xxxx: mime type: ' + file.getMimeType())
-      Logger.log(" ");
-*/
       fileDate = file.getLastUpdated();
       objFilesByDate[fileDate] = file.getId(); //Create an object of file names by file ID
 
